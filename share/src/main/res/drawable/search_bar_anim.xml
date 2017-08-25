@@ -1,0 +1,30 @@
+<animated-vector xmlns:aapt="http://schemas.android.com/aapt"
+                 xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:drawable="@drawable/search_bar">
+
+    <target android:name="search">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="1000"
+                android:propertyName="trimPathStart"
+                android:repeatCount="1"
+                android:repeatMode="reverse"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType"/>
+        </aapt:attr>
+    </target>
+
+    <target android:name="bar">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="1000"
+                android:propertyName="trimPathStart"
+                android:repeatCount="1"
+                android:repeatMode="reverse"
+                android:valueFrom="1"
+                android:valueTo="0"
+                android:valueType="floatType"/>
+        </aapt:attr>
+    </target>
+</animated-vector>

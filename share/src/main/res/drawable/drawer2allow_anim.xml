@@ -1,0 +1,60 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:aapt="http://schemas.android.com/aapt"
+                 android:drawable="@drawable/allow2drawer">
+
+    <target android:name="top">
+        <aapt:attr name="android:animation">
+            <set android:ordering="together">
+                <objectAnimator
+                    android:duration="400"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="rotation"
+                    android:valueFrom="225"
+                    android:valueTo="360"
+                    android:valueType="floatType"/>
+
+                <objectAnimator
+                    android:duration="400"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="scaleX"
+                    android:valueFrom="0.85"
+                    android:valueTo="1"
+                    android:valueType="floatType"/>
+            </set>
+        </aapt:attr>
+    </target>
+
+    <target android:name="center">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="400"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="rotation"
+                android:valueFrom="180"
+                android:valueTo="360"
+                android:valueType="floatType"/>
+        </aapt:attr>
+    </target>
+
+    <target android:name="bottom">
+        <aapt:attr name="android:animation">
+            <set android:ordering="together">
+                <objectAnimator
+                    android:duration="400"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="rotation"
+                    android:valueFrom="135"
+                    android:valueTo="360"
+                    android:valueType="floatType"/>
+
+                <objectAnimator
+                    android:duration="400"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="scaleX"
+                    android:valueFrom="0.85"
+                    android:valueTo="1"
+                    android:valueType="floatType"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

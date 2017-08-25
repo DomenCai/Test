@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="60dp"
+        android:height="180dp"
+        android:viewportHeight="180"
+        android:viewportWidth="60">
+
+    <group
+        android:name="mic"
+        android:pivotX="30"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:pivotY="162">
+        <path
+            android:fillColor="#ec544c"
+            android:pathData="M24,149 a6,6 0 1 1 12,0 v12 a6,6 0 1 1 -12,0"/>
+
+        <path
+            android:pathData="M18,160 a12,12 0 1 0 24,0 M30,172 v8"
+            android:strokeColor="#ec544c"
+            android:strokeWidth="3"/>
+    </group>
+
+    <group
+        android:name="trash_bin"
+        android:translateY="100">
+
+        <group
+            android:name="cap"
+            android:pivotX="24"
+            android:pivotY="110">
+            <path
+                android:fillColor="#7b8386"
+                android:pathData="M22 94 h20 q2,0 2,-1.5 t-2,-1.5 h-5 q-2,0 -3,-2 t-4,-2 q-3,0 -4,2 t-3,2 h-5 q-2,0 -2,1.5 t2,1.5"/>
+        </group>
+
+        <path
+            android:fillColor="#7b8386"
+            android:pathData="M22,95 h16 q2,0 2,2 C39,117 38,118 30,118 C22,118 21,117 20,97 q0,-2 2,-2"/>
+    </group>
+</vector>

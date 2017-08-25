@@ -1,0 +1,14 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:drawable="@drawable/voice">
+
+    <target
+        android:animation="@animator/anim_mic"
+        android:name="mic"/>
+
+    <target
+        android:name="cap"
+        android:animation="@animator/anim_trash_cap" />
+    <target
+        android:name="trash_bin"
+        android:animation="@animator/anim_trash_bin" />
+</animated-vector>

@@ -1,0 +1,10 @@
+<objectAnimator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="300"
+    android:interpolator="@android:interpolator/decelerate_cubic"
+    android:propertyName="pathData"
+    android:repeatCount="3"
+    android:repeatMode="reverse"
+    android:valueFrom="M24,50 Q60,12 96 50 Q60,17 24,50"
+    android:valueTo="M24,50 Q60,55 96 50 Q60,60 24,50"
+    android:valueType="pathType"/>

@@ -1,0 +1,14 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:drawable="@drawable/eye">
+    <target
+        android:name="top"
+        android:animation="@animator/anim_eye_top" />
+
+    <target
+        android:name="bottom"
+        android:animation="@animator/anim_eye_bottom" />
+
+    <target
+        android:name="clip"
+        android:animation="@animator/anim_eye_clip" />
+</animated-vector>
