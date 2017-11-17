@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">One</string>
+    <string name="follow">追更新</string>
+    <string name="read">开始阅读</string>
+
+    <string name="book_detail_category"> &#160;|&#160;%1$s&#160;|&#160;%1$s</string>
+</resources>
