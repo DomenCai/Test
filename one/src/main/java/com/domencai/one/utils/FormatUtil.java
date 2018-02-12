@@ -1,4 +1,4 @@
-package com.domencai.one;
+package com.domencai.one.utils;
 
 import android.text.TextUtils;
 import android.util.Log;

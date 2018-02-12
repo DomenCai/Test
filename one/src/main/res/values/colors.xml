@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="btn_press">#8888</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#03A9F4</color>
+    <color name="btn_press">#44BBDEFB</color>
     <color name="rating_bar_bg">#eeaa4e</color>
+    <color name="background_white">#DBDBDD</color>
+    <color name="background_white_light">#E1E1E1</color>
+    <color name="background_yellow">#D8D3C0</color>
+    <color name="background_yellow_light">#DAD6C5</color>
+    <color name="background_green">#A9D1AF</color>
+    <color name="background_green_light">#B4D4B7</color>
+    <color name="background_black">#1A1A1B</color>
+    <color name="background_black_light">#0E1215</color>
 </resources>

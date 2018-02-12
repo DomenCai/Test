@@ -38,6 +38,12 @@ public class BaseViewHolder  extends RecyclerView.ViewHolder {
         return this;
     }
 
+    public BaseViewHolder setTextColor(int id, int color) {
+        TextView textView = findView(id);
+        textView.setTextColor(color);
+        return this;
+    }
+
     public BaseViewHolder setImage(int id, String imgUrl) {
         ImageView imageView = findView(id);
         Glide.with(itemView.getContext()).load(imgUrl).into(imageView);

@@ -2,7 +2,6 @@ package com.domencai.one.common;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,9 +20,7 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     private View.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Log.w("BaseAdapter", "onClick: ");
             if (mItemClickSupport != null) {
-                Log.w("BaseAdapter", "onClick: mItemClickSupport != null");
                 mItemClickSupport.onItemClick(view);
             }
         }
@@ -43,9 +40,7 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         BaseViewHolder viewHolder = new BaseViewHolder(parent, mLayoutId);
-        Log.w("BaseAdapter", "onCreateViewHolder: ");
         if (mItemClickSupport != null) {
-            Log.w("BaseAdapter", "onCreateViewHolder: mItemClickSupport != null");
             viewHolder.itemView.setOnClickListener(mClickListener);
             viewHolder.itemView.setOnLongClickListener(mLongClickListener);
         }
@@ -84,7 +79,6 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     }
 
     void setItemClickSupport(ItemClickSupport itemClickSupport) {
-        Log.w("BaseAdapter", "setItemClickSupport: ");
         this.mItemClickSupport = itemClickSupport;
     }
 }

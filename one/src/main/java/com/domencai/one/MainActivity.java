@@ -15,15 +15,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.wasabeef.glide.transformations.BlurTransformation;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
@@ -70,15 +64,15 @@ public class MainActivity extends AppCompatActivity {
                     View view = snapHelper.findSnapView(recyclerView.getLayoutManager());
                     int position = recyclerView.getChildAdapterPosition(view);
                     OneBean.DataBean dataBean = myAdapter.getDataBean(position);
-                    Glide.with(MainActivity.this)
-                            .load(dataBean.hp_img_url)
-                            .bitmapTransform(new BlurTransformation(MainActivity.this, 25, 4))
-                            .into(new SimpleTarget<GlideDrawable>() {
-                                @Override
-                                public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
-                                    recyclerView.setBackground(resource);
-                                }
-                            });
+//                    Glide.with(MainActivity.this)
+//                            .load(dataBean.hp_img_url)
+//                            .bitmapTransform(new BlurTransformation(MainActivity.this, 25, 4))
+//                            .into(new SimpleTarget<GlideDrawable>() {
+//                                @Override
+//                                public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+//                                    recyclerView.setBackground(resource);
+//                                }
+//                            });
                 }
             }
         });
@@ -141,18 +135,18 @@ public class MainActivity extends AppCompatActivity {
             author = author.substring(0, author.indexOf(" ")).replace("＆", " | ");
             holder.mAuthor.setText(author);
             holder.mContent.setText(dataBean.hp_content);
-            Glide.with(holder.mCover.getContext())
-                    .load(dataBean.hp_img_url)
-                    .into(new SimpleTarget<GlideDrawable>() {
-                        @Override
-                        public void onResourceReady(GlideDrawable resource, GlideAnimation<?
-                                                        super GlideDrawable> glideAnimation) {
-                            ImageView cover = holder.mCover;
-                            float radio = resource.getIntrinsicHeight() * 1f / resource.getIntrinsicWidth();
-                            cover.getLayoutParams().height = (int) (cover.getWidth() * radio);
-                            cover.setImageDrawable(resource);
-                        }
-                    });
+//            Glide.with(holder.mCover.getContext())
+//                    .load(dataBean.hp_img_url)
+//                    .into(new SimpleTarget<GlideDrawable>() {
+//                        @Override
+//                        public void onResourceReady(GlideDrawable resource, GlideAnimation<?
+//                                                        super GlideDrawable> glideAnimation) {
+//                            ImageView cover = holder.mCover;
+//                            float radio = resource.getIntrinsicHeight() * 1f / resource.getIntrinsicWidth();
+//                            cover.getLayoutParams().height = (int) (cover.getWidth() * radio);
+//                            cover.setImageDrawable(resource);
+//                        }
+//                    });
 
 //            Horoscope horoscope = mHoroscopes[position % mHoroscopes.length];
 //            holder.mContent.setText(horoscope.name);

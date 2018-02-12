@@ -1,4 +1,4 @@
-package com.domencai.one;
+package com.domencai.one.utils;
 
 import android.util.Log;
 
@@ -42,7 +42,7 @@ public class RxUtils {
 
         @Override
         public void onError(Throwable e) {
-            Log.w(mTag, "onError: " + e.getMessage());
+            Log.w(mTag, "onError: ", e);
         }
     }
 }

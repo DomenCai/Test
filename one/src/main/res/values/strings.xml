@@ -4,4 +4,13 @@
     <string name="read">开始阅读</string>
 
     <string name="book_detail_category"> &#160;|&#160;%1$s&#160;|&#160;%1$s</string>
+    <string name="last_chapter">上一章</string>
+    <string name="next_chapter">下一章</string>
+    <string name="read_progress">阅读进度</string>
+    <string name="text_size">字体大小</string>
+    <string name="brightness">亮度调节</string>
+    <string name="background">背景颜色</string>
+    <string name="volume_flip">音量键翻页</string>
+    <string name="today_success_rating">Today\'s Success Rating</string>
+
 </resources>

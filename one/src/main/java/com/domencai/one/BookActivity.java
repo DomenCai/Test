@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -18,6 +19,9 @@ import com.domencai.one.bean.BookDetail;
 import com.domencai.one.bean.RecommendBookList.RecommendBook;
 import com.domencai.one.common.BaseAdapter;
 import com.domencai.one.common.BaseViewHolder;
+import com.domencai.one.parallax.ParallaxBack;
+import com.domencai.one.utils.FormatUtil;
+import com.domencai.one.utils.RxUtils;
 
 import java.util.Locale;
 
@@ -26,7 +30,7 @@ import static com.domencai.one.bean.BookRecommend.BooksBean;
 /**
  * Created by Domen、on 2017/11/13.
  */
-
+@ParallaxBack
 public class BookActivity extends AppCompatActivity {
     private static final String KEY_BOOK_ID = "BOOK_ID";
 
@@ -80,6 +84,12 @@ public class BookActivity extends AppCompatActivity {
         rvRecommendBookList.setAdapter(mBookListAdapter);
         initView();
         initData();
+        mTvTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReadActivity.start(BookActivity.this, getIntent().getStringExtra(KEY_BOOK_ID));
+            }
+        });
     }
 
     private void initView() {

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.domencai.one.widget.BookLayout
+        android:id="@+id/book_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:paddingTop="24dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_image_btn"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_back"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            tools:text="@string/read"/>
+
+        <ImageButton
+            android:id="@+id/btn_chapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_image_btn"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_chapter"/>
+
+        <ImageButton
+            android:id="@+id/btn_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_image_btn"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_more"/>
+    </LinearLayout>
+
+</FrameLayout>

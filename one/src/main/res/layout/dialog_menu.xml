@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/menu_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="#222"
+        android:gravity="center_vertical"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_bottom_menu"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_progress"/>
+
+    <TextView
+        android:id="@+id/tv_read_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/read_progress"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_progress"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/cb_volume_flip"
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#fff"
+        android:theme="@style/MyCheckBox"
+        android:layout_height="wrap_content"
+        android:text="@string/volume_flip"
+        app:layout_constraintBottom_toBottomOf="@id/tv_read_progress"
+        app:layout_constraintEnd_toEndOf="@id/tv_read_progress"
+        app:layout_constraintTop_toTopOf="@id/tv_read_progress"/>
+
+    <ImageView
+        android:id="@+id/iv_last_chapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_image_btn"
+        android:contentDescription="@null"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="@id/tv_read_progress"
+        app:layout_constraintTop_toBottomOf="@+id/tv_read_progress"
+        app:srcCompat="@drawable/ic_chapter_last"/>
+
+    <SeekBar
+        android:id="@+id/sb_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seekbar_layer"
+        android:thumb="@drawable/scrubber_selector"
+        app:layout_constraintBottom_toBottomOf="@id/iv_last_chapter"
+        app:layout_constraintEnd_toStartOf="@id/iv_next_chapter"
+        app:layout_constraintStart_toEndOf="@id/iv_last_chapter"
+        app:layout_constraintTop_toTopOf="@id/iv_last_chapter"/>
+
+    <ImageView
+        android:id="@+id/iv_next_chapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_image_btn"
+        android:contentDescription="@null"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_read_progress"
+        app:layout_constraintTop_toTopOf="@id/iv_last_chapter"
+        app:srcCompat="@drawable/ic_chapter_next"/>
+
+    <TextView
+        android:id="@+id/tv_text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/text_size"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tv_read_progress"
+        app:layout_constraintTop_toBottomOf="@id/iv_last_chapter"/>
+
+    <ImageView
+        android:id="@+id/iv_smaller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_image_btn"
+        android:contentDescription="@null"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="@id/tv_read_progress"
+        app:layout_constraintTop_toBottomOf="@id/tv_text_size"
+        app:srcCompat="@drawable/ic_font_small"/>
+
+    <SeekBar
+        android:id="@+id/sb_font"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progressDrawable="@drawable/seekbar_layer"
+        android:thumb="@drawable/scrubber_selector"
+        app:layout_constraintBottom_toBottomOf="@id/iv_smaller"
+        app:layout_constraintEnd_toStartOf="@id/iv_largen"
+        app:layout_constraintStart_toEndOf="@id/iv_smaller"
+        app:layout_constraintTop_toTopOf="@id/iv_smaller"/>
+
+    <ImageView
+        android:id="@+id/iv_largen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_image_btn"
+        android:contentDescription="@null"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_read_progress"
+        app:layout_constraintTop_toTopOf="@id/iv_smaller"
+        app:srcCompat="@drawable/ic_font_large"/>
+
+    <TextView
+        android:id="@+id/tv_brightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/brightness"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tv_read_progress"
+        app:layout_constraintTop_toBottomOf="@id/iv_smaller"/>
+
+    <ImageView
+        android:id="@+id/iv_darken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_image_btn"
+        android:contentDescription="@null"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="@id/tv_read_progress"
+        app:layout_constraintTop_toBottomOf="@id/tv_brightness"
+        app:srcCompat="@drawable/ic_darken"/>
+
+    <SeekBar
+        android:id="@+id/sb_brightness"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="20"
+        android:progressDrawable="@drawable/seekbar_layer"
+        android:thumb="@drawable/scrubber_selector"
+        app:layout_constraintBottom_toBottomOf="@id/iv_darken"
+        app:layout_constraintEnd_toStartOf="@id/iv_brighten"
+        app:layout_constraintStart_toEndOf="@id/iv_darken"
+        app:layout_constraintTop_toTopOf="@id/iv_darken"/>
+
+    <ImageView
+        android:id="@+id/iv_brighten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_image_btn"
+        android:contentDescription="@null"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_read_progress"
+        app:layout_constraintTop_toTopOf="@id/iv_darken"
+        app:srcCompat="@drawable/ic_brighten"/>
+
+    <TextView
+        android:id="@+id/tv_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/background"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tv_read_progress"
+        app:layout_constraintTop_toBottomOf="@id/iv_darken"/>
+
+    <View
+        android:id="@+id/color_white"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/background_white"
+        app:layout_constraintEnd_toStartOf="@id/color_yellow"
+        app:layout_constraintStart_toStartOf="@id/tv_read_progress"
+        app:layout_constraintTop_toBottomOf="@id/tv_background"/>
+
+    <View
+        android:id="@+id/color_yellow"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:background="@color/background_yellow"
+        app:layout_constraintEnd_toStartOf="@id/color_green"
+        app:layout_constraintStart_toEndOf="@id/color_white"
+        app:layout_constraintTop_toTopOf="@id/color_white"/>
+
+    <View
+        android:id="@+id/color_green"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:background="@color/background_green"
+        app:layout_constraintEnd_toStartOf="@id/color_black"
+        app:layout_constraintStart_toEndOf="@id/color_yellow"
+        app:layout_constraintTop_toTopOf="@id/color_white"/>
+
+    <View
+        android:id="@+id/color_black"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:background="@color/background_black"
+        app:layout_constraintEnd_toEndOf="@id/tv_read_progress"
+        app:layout_constraintStart_toEndOf="@id/color_green"
+        app:layout_constraintTop_toTopOf="@id/color_white"/>
+
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/color_white"/>
+</android.support.constraint.ConstraintLayout>
