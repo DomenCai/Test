@@ -90,4 +90,26 @@ public class PageView extends View {
             }
         }
     }
+
+//    private void drawScaleText(Canvas canvas, String lineText, float lineWidth) {
+//        float x = 0;
+//        if (lineText.startsWith("\u3000\u3000")) {
+//            String blanks = "";
+//            canvas.drawText(blanks, x, mLineY, mPaint);
+//            float width = StaticLayout.getDesiredWidth(blanks, mPaint);
+//            x += width;
+//            lineText = lineText.substring(3);
+//        }
+//        //比如说一共有5个字,中间有4个间隔,
+//        //那就用整个TextView的宽度 - 5个字的宽度,
+//        //然后除以4,填补到这4个空隙中
+//        float interval = (mViewWidth - lineWidth) / (lineText.length() - 1);
+//        for (int i = 0; i < lineText.length(); ) {
+//            String character;
+//            character = String.valueOf(lineText.charAt(i++));
+//            float cw = StaticLayout.getDesiredWidth(character, mPaint);
+//            canvas.drawText(character, x, mLineY, mPaint);
+//            x += (cw + interval);
+//        }
+//    }
 }

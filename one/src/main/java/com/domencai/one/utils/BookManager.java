@@ -3,8 +3,16 @@ package com.domencai.one.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 
 import com.domencai.one.App;
+import com.domencai.one.bean.Recommend.RecommendBooks;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Domen、on 2017/11/29.
@@ -93,6 +101,34 @@ public class BookManager {
 
     public int getPage() {
         return mSharedPreferences.getInt(mBookId + KEY_PAGE_SUFFIX, 0);
+    }
+
+    public void saveRecommend(String id, String content) {
+        Set<String> ids = mSharedPreferences.getStringSet("recommend", null);
+        if (ids == null) {
+            ids = new HashSet<>();
+        }
+        ids.add(id);
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putStringSet("recommend", ids);
+        editor.putString(id, content);
+        editor.apply();
+    }
+
+    public List<RecommendBooks> getRecommends() {
+        List<RecommendBooks> books = new ArrayList<>();
+        Set<String> ids = mSharedPreferences.getStringSet("recommend", null);
+        if (ids != null && !ids.isEmpty()) {
+            Gson gson = new Gson();
+            for (String id : ids) {
+                String detail = mSharedPreferences.getString(id, null);
+                if (!TextUtils.isEmpty(detail)) {
+                    RecommendBooks book = gson.fromJson(detail, RecommendBooks.class);
+                    books.add(book);
+                }
+            }
+        }
+        return books;
     }
 
     public static BookManager getInstance() {

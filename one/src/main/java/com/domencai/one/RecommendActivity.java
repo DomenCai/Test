@@ -12,6 +12,7 @@ import com.domencai.one.bean.Recommend.RecommendBooks;
 import com.domencai.one.common.BaseAdapter;
 import com.domencai.one.common.BaseViewHolder;
 import com.domencai.one.common.ItemClickSupport;
+import com.domencai.one.utils.BookManager;
 import com.domencai.one.utils.RxUtils;
 
 import java.util.List;
@@ -45,6 +46,7 @@ public class RecommendActivity extends AppCompatActivity implements ItemClickSup
                 .subscribe(new RxUtils.SimpleSubscriber<List<RecommendBooks>>() {
                     @Override
                     public void onNext(List<RecommendBooks> recommendBooks) {
+                        recommendBooks.addAll(BookManager.getInstance().getRecommends());
                         mAdapter.setData(recommendBooks);
                     }
                 });

@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecommendActivity">
+        <activity android:name=".test.TestActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
 
@@ -25,6 +25,13 @@
         <activity android:name=".BookActivity"/>
         <activity android:name=".ReadActivity"
             android:theme="@style/TranslucentStatus">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".video.VideoListActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN"/>-->
 

@@ -19,6 +19,11 @@ public class FileUtils {
     private final static int BUFFER_SIZE = 2048;
     private static final String KEY_CHAPTER = "chapter";
     private static final String KEY_BOOK = "book";
+    private static final String KEY_RECOMMEND = "recommend";
+
+    public static void writeRecommend(String bookId, String content) {
+        saveFile(getFilePath(KEY_RECOMMEND) + File.separator + bookId, content);
+    }
 
     public static void writeChapters(String bookId, String content) {
         saveFile(getFilePath(KEY_CHAPTER) + File.separator + bookId, content);

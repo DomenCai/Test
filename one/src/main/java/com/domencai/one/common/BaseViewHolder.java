@@ -23,7 +23,7 @@ public class BaseViewHolder  extends RecyclerView.ViewHolder {
     }
 
     @SuppressWarnings("unchecked")
-    private <V extends View> V findView(int id) {
+    public  <V extends View> V findView(int id) {
         View v = mViewSparseArray.get(id);
         if (v == null) {
             v = itemView.findViewById(id);

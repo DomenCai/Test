@@ -37,9 +37,6 @@ public class FoldableLayout extends FrameLayout {
     protected View mCoverView;
     protected View mDetailView;
     protected View mRootView;
-    protected Bitmap mDetailBitmap;
-    protected Bitmap mDetailTopBitmap;
-    protected Bitmap mDetailBottomBitmap;
     protected int mCoverHeight;
     private boolean mIsFolded = true;
     private boolean mIsAnimating = false;
@@ -215,14 +212,14 @@ public class FoldableLayout extends FrameLayout {
     }
 
     private void ensureBitmaps() {
-        mDetailBitmap = getBitmap(mDetailView);
-        int width = mDetailBitmap.getWidth();
-        int height = mDetailBitmap.getHeight() / 2;
-        mDetailTopBitmap = Bitmap.createBitmap(mDetailBitmap, 0, 0, width, height);
-        mDetailBottomBitmap = Bitmap.createBitmap(mDetailBitmap, 0, height, width, height, mMatrix, true);
+        Bitmap detailBitmap = getBitmap(mDetailView);
+        int width = detailBitmap.getWidth();
+        int height = detailBitmap.getHeight() / 2;
+        Bitmap detailT = Bitmap.createBitmap(detailBitmap, 0, 0, width, height);
+        Bitmap detailB = Bitmap.createBitmap(detailBitmap, 0, height, width, height, mMatrix, true);
 
-        mImageViewAbove.setBackground(new BitmapDrawable(getResources(), mDetailBottomBitmap));
-        mImageViewBelow.setBackground(new BitmapDrawable(getResources(), mDetailTopBitmap));
+        mImageViewAbove.setBackground(new BitmapDrawable(getResources(), detailB));
+        mImageViewBelow.setBackground(new BitmapDrawable(getResources(), detailT));
         setVisibility(false);
     }
 

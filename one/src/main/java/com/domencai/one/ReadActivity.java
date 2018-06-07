@@ -116,7 +116,7 @@ public class ReadActivity extends AppCompatActivity implements OnClickListener, 
     @Override
     public void onBackPressed() {
         if (!hideTitle()) {
-            moveTaskToBack(false);
+            super.onBackPressed();
         }
     }
 
